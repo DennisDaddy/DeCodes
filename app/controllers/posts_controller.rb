@@ -1,19 +1,9 @@
 class PostsController < ApplicationController
-  def new
-  end
-
   def index
-  end
-
-  def edit
-  end
-
-  def update
+    @posts = Post.paginate(page: params[:page])
   end
 
   def show
-  end
-
-  def destroy
+    @post = Post.find(params[:id])     
   end
 end
