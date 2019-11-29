@@ -508,7 +508,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   faker
-  fog
+  fog (~> 2.2)
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
