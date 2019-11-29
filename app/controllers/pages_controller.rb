@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-  def index
+  def home
+    @posts = Post.all
   end
+  
 end

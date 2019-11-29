@@ -1,69 +1,12 @@
 <% provide(:title, "Posts") %>
 
-<!-- Start container -->
-<div class="container">
-	<!-- Page Heading/Breadcrumbs -->
-    <div class="row">
-        <div class="col-lg-12">
-			<h3 class="center"><b>Think Twice And Code It Once...</b></h3>
-			<hr>
-        </div>
+<% @posts.each do | post| %>
+  <li>
+   <h2><%= link_to post.title, post %></h2>
+    <div class="entry-meta">
+        <span><i>Posted: <%= time_ago_in_words(post.created_at) %> ago.</i></span>
     </div>
-    <!-- /.row -->
-
-	<!-- Start row -->
-	<div class="row">
-		<!-- Start col-sm-8 -->
-		<div class="col-sm-8 ">
-			<div class="post_details">
-			<ul class="list cat-list">  
-			<% @posts.each do |post| %>	
-			    <li>
-			    <h2><%= link_to post.title, post %></h2>
-			    <div class="entry-meta">
-			        <span><i>Posted: <%= time_ago_in_words(post.created_at) %> ago.</i></span>
-			    </div>
-			    <p><%= truncate(post.content, length: 100, escape: false,
-			    separator: '') %></p>
-				
-				</li>			  
-			<% end %>
-			</ul>
-			</div>		
-		</div>
-		<!-- End col-sm-8 -->
-
-        <!-- Start col-sm-4 -->
-		<div class="col-sm-4 ">
-			<div class="blog_right_sidebar">
-			    <aside class="single_sidebar_widget search_widget">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search Posts">
-                        <span class="input-group-btn">                            
-                        </span>
-                    </div><!-- /input-group -->
-                    <div class="br"></div>
-                </aside>
-                <hr>
-
-                <div class="author_widget">
-                	<h4><strong>About Me</strong></h4><hr>
-					<p><img src="/assets/blink.gif" width="35%"> </p>	
-					<strong>Charlie Barber</strong>
-					<p>Senior Rails developer</p>				
-				</div>
-				<hr>			
-			<h4 class="widget_title">Categories</h4><hr>
-			<ul class="list cat-list">
-				<% Category.all.each do |category| %>
-                   <li><%= link_to  category.name, category %></li>                    
-                <% end %>			
-			</ul>
-			<hr>
-			</div>
-		</div>		
-		<!-- End col-sm-4 -->
-	</div>	
-	<!-- End row -->
-</div>
-<!-- End container -->
+	<p><%= truncate(post.content, length: 100, escape: false,
+			    separator: '') %></p>			
+  </li>			
+<% end %>

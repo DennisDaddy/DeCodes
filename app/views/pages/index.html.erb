@@ -1,2 +1,12 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>Home Page</h1>
+
+<% @posts.each do | post| %>
+  <li>
+   <h2><%= link_to post.title, post %></h2>
+    <div class="entry-meta">
+        <span><i>Posted: <%= time_ago_in_words(post.created_at) %> ago.</i></span>
+    </div>
+	<p><%= truncate(post.content, length: 100, escape: false,
+			    separator: '') %></p>			
+  </li>			
+<% end %>
