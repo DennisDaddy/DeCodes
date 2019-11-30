@@ -19,36 +19,20 @@
 			  <span><i><b>Posted: <%= time_ago_in_words(@post.created_at) %> ago.</b></i></span>
 			</div>
 			<br>
-			<p><%= @post.content %></p> 			
-			
-			<hr>
-
-			<div class="comments-area">
-			 <h4> Comments</b></h4>
-			  <hr>
-			  <%# <%= render @post.comments %>
-			</div>
-			
-			<div class="comments-area">
-			<h4 align="center"><b>Leave a Comment</b></h4>
-			<hr>	
-            <%# <%= render 'comments/form' %> 
-			</div>	
-			
+			<p><%= @post.content %></p>
+			<hr>			
 		</div>
 
        <!-- Start col-sm-4 -->
 		<div class="col-sm-4 ">
 			<div class="blog_right_sidebar">
-
                 <div class="author_widget">
                 	<h4><strong>Author</strong></h4><hr>
 					 <p><img src="/assets/blink.gif" width="35%"> </p>	
 					 <strong>Charlie Barber</strong>
 					 <p>Senior Rails developer</p>				
 				</div>
-				<hr>
-				
+				<hr>				
 			<h4 class="widget_title">Categories</h4><hr>
 				<ul class="list cat-list">
 				<% Category.all.each do |category| %>

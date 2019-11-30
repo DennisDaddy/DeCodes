@@ -1,0 +1,31 @@
+.post_details h2{
+    font-size: 24px;
+    line-height: 36px;
+    color: #222222;
+    font-weight: 600;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.post_details a:hover {
+	color: #9f09f9;
+}
+
+.list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.cat-list li {
+    border-bottom: 2px dotted #eee;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    padding-bottom: 12px;
+}
+
+.cat-list li:hover {
+    border-color: #6247ea;
+}

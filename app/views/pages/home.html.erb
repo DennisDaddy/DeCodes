@@ -1,12 +1,36 @@
-<h1>Home Page</h1>
+<% provide(:title, "Home") %>
 
-<% @posts.each do | post| %>
-  <li>
-   <h2><%= link_to post.title, post %></h2>
-    <div class="entry-meta">
-        <span><i>Posted: <%= time_ago_in_words(post.created_at) %> ago.</i></span>
+	<!-- Intro -->
+	<div class="container text-center">
+		<br>
+		<p><%= image_tag("blink.gif", :alt => "about-us", class: "img img-rounded") %></p>
+		<strong>Charlie Barber</strong>
+		<p>Senior software developer</p>	
+		<h2 class="thin">Think Twice And Code It Once...</h2>		
+		<hr>
+	</div>
+	<!-- /Intro-->
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+               <div class="post_details">
+					<ul class="list cat-list">  
+					<% @posts.each do |post| %>	
+						<li>
+							<h2><%= link_to post.title, post %></h2>
+							<div class="entry-meta">
+								<span><i>Posted: <%= time_ago_in_words(post.created_at) %> ago.</i></span>
+							</div>
+							<p><%= truncate(post.content, length: 100, escape: false
+							) %></p>
+						</li>			  
+					<% end %>
+					</ul>
+				</div>
+            </div>
+        </div>
     </div>
-	<p><%= truncate(post.content, length: 100, escape: false,
-			    separator: '') %></p>			
-  </li>			
-<% end %>
+	 <!-- /Main Content -->
+  
