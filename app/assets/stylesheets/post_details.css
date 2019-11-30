@@ -1,4 +1,4 @@
-.post_details h2{
+.post_details h2 {
     font-size: 24px;
     line-height: 36px;
     color: #222222;
@@ -9,7 +9,7 @@
 }
 
 .post_details a:hover {
-	color: #9f09f9;
+    color: #9f09f9;
 }
 
 .list {
@@ -20,6 +20,7 @@
 
 .cat-list li {
     border-bottom: 2px dotted #eee;
+    text-decoration: none;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
