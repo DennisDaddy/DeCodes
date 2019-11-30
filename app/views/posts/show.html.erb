@@ -19,29 +19,20 @@
 			  <span><i><b>Posted: <%= time_ago_in_words(@post.created_at) %> ago.</b></i></span>
 			</div>
 			<br>
-			<p><%= markdown(@post.content) %></p> 			
-			<p>
-			<% if current_user?(@post.user) %>
-			  <%= link_to "Delete", @post, method: :delete,
-			  data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
-			  |  <%= link_to "Edit",edit_post_path(@post), class: "btn btn-primary" %>
-			<% end %>
-			<% if logged_in? %>
-			   | <%= link_to  "New", new_post_path, class: "btn btn-primary" %>
-			<% end %>
-			</p>	
+			<p><%= @post.content %></p> 			
+			
 			<hr>
 
 			<div class="comments-area">
-			  <h4 align="center"><b><%= @post.comments.count %> Comments</b></h4>
+			 <h4> Comments</b></h4>
 			  <hr>
-			  <%= render @post.comments %>			
+			  <%# <%= render @post.comments %>
 			</div>
 			
 			<div class="comments-area">
 			<h4 align="center"><b>Leave a Comment</b></h4>
 			<hr>	
-            <%= render 'comments/form' %>
+            <%# <%= render 'comments/form' %> 
 			</div>	
 			
 		</div>
