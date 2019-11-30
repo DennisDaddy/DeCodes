@@ -1,14 +1,14 @@
 <% provide(:title, @category.name) %>
 
 <div class="container">
-<!-- Page Heading/Breadcrumbs -->
+    <!-- row -->
     <div class="row">
         <div class="col-lg-12">
 			<h2 class="page-title"><%= @category.name %></h2>
 			<hr>
         </div>
     </div>
-    <!-- /.row -->
+    <!-- /row -->
 	 
 <div class="row">
    <div class="col-md-8">	    
@@ -38,21 +38,20 @@
 			<div class="blog_right_sidebar">
                 <div class="author_widget">
                 	<h4><strong>Author</strong></h4><hr>
-					 <p><img src="/assets/blink.gif" width="35%"> </p>	
-					 <strong>Charlie Barber</strong>
-					 <p>Senior Rails developer</p>				
+					 <p><img src="/assets/face.jpg" width="35%"> </p>	
+					 <strong>Dennis Odhiambo</strong>
+					 <p>Backend Developer</p>				
 				</div>
 				<hr>
 				
 			<h4 class="widget_title">Categories</h4><hr>
 				<ul class="list cat-list">
 				<% Category.all.each do |category| %>
-                   <%= link_to  category.name, category, class: "btn btn-default" %>                    
+                  <li> <%= link_to  category.name, category %></li>         
                 <% end %>			
 			</ul>
 			</div>
 		</div>		
 		<!-- End col-sm-4 --> 
-
 </div>
 </div>
